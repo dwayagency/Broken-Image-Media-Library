@@ -102,8 +102,8 @@ class Broken_Images_Scanner {
 					<tr>
 						<th><label for="bis_limit"><?php _e( 'Limite massimo', 'broken-images' ); ?></label></th>
 						<td>
-							<input type="number" id="bis_limit" value="2000" min="100" max="10000" class="small-text" />
-							<p class="description"><?php _e( 'Numero massimo di immagini da scansionare (100-10000)', 'broken-images' ); ?></p>
+							<input type="number" id="bis_limit" value="2000" min="100" max="50000" class="small-text" />
+							<p class="description"><?php _e( 'Numero massimo di immagini da scansionare (100-50000)', 'broken-images' ); ?></p>
 						</td>
 					</tr>
 				</table>
@@ -190,7 +190,7 @@ class Broken_Images_Scanner {
 		$from  = isset( $_POST['from'] ) ? sanitize_text_field( $_POST['from'] ) : '';
 		$to    = isset( $_POST['to'] ) ? sanitize_text_field( $_POST['to'] ) : '';
 		$batch = isset( $_POST['batch'] ) ? max( 10, min( 500, intval( $_POST['batch'] ) ) ) : 100;
-		$limit = isset( $_POST['limit'] ) ? max( 100, min( 10000, intval( $_POST['limit'] ) ) ) : 2000;
+		$limit = isset( $_POST['limit'] ) ? max( 100, min( 50000, intval( $_POST['limit'] ) ) ) : 2000;
 		$page  = isset( $_POST['page'] ) ? max( 1, intval( $_POST['page'] ) ) : 1;
 		$checked_so_far = isset( $_POST['checked'] ) ? intval( $_POST['checked'] ) : 0;
 
